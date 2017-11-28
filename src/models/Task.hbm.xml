@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="models.Task" table="Task" schema="dbo" catalog="abd_db">
+        <id name="taskId">
+            <column name="TaskID" sql-type="int"/>
+        </id>
+        <property name="issueFk">
+            <column name="Issue_FK" sql-type="int" not-null="true"/>
+        </property>
+        <property name="causeFk">
+            <column name="Cause_FK" sql-type="int" not-null="true"/>
+        </property>
+        <property name="author">
+            <column name="author" sql-type="char(100)" length="100" not-null="true"/>
+        </property>
+        <property name="creationDate">
+            <column name="creationDate" sql-type="date" not-null="true"/>
+        </property>
+        <property name="doer">
+            <column name="doer" sql-type="varchar(100)" length="100" not-null="true"/>
+        </property>
+        <property name="content">
+            <column name="content" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="planTask">
+            <column name="planTask" sql-type="date" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
